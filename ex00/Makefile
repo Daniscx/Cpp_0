@@ -1,17 +1,18 @@
-NAME = magephone
+NAME = megaphone
 
-CC = cc 
-CFLAGS = -Wall -Werror -Wextra -std=c++98 -lstdc++
+CXX = c++
+CXXFLAGS = -Wall -Werror -Wextra -std=c++98
 
 
-CFILES = magephone.cpp
+CFILES = megaphone.cpp
 
 OBJECTS = $(CFILES:.cpp=.o)
 
-all: 
+all: $(NAME)
 
 $(NAME): $(OBJECTS)
-	$(CC) $(CFLAGS) $(OBJECTS)  -o $(NAME)
+	$(CXX) $(CXXFLAGS) $(OBJECTS) -o $(NAME)
+
 
 clean:
 	rm -f $(OBJECTS)
