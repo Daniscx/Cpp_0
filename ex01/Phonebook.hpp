@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Phonebook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
+/*   By: dmaestro <dmaestro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 16:54:12 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/11/21 17:19:16 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/11/25 18:08:14 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@
 class contact
 {
     private:
-        char *name;
-        char *number;
-        char *last_name;
-        char *nickname;
-        char *darkest_secret;
+        char name[1024];
+        char number[1024];
+        char last_name[1024];
+        char nickname[1024];
+        char darkest_secret[1024];
     public:
         contact();
        contact(char info[5][1024]);

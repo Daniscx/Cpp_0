@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
+/*   By: dmaestro <dmaestro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 18:28:46 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/11/20 18:53:50 by dmaestro         ###   ########.fr       */
+/*   Updated: 2025/11/25 19:19:29 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,10 @@ int main()
             phone_used.search_contact();
         else if(strcmp(str_input, "EXIT") == 0)
             break;
+        else if(str_input[0] == '\0')
+            break;
         else
             std::cout << "WRONG COMAND" <<  std::endl;
-        
    }
 
-
-    
-    
 }
