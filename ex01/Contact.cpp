@@ -6,39 +6,42 @@
 /*   By: dmaestro <dmaestro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 17:07:19 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/11/25 18:15:49 by dmaestro         ###   ########.fr       */
+/*   Updated: 2026/02/25 21:24:27 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Phonebook.hpp"
 
-contact::contact()
+Contact::Contact()
 {
-    contact::name[0] = '\0';
-    contact::last_name[0] = '\0';
-    contact::nickname[0] = '\0';
-    contact::number[0] = '\0';
-    contact::darkest_secret[0] = '\0';
+    Contact::name = '\0';
+    Contact::last_name = '\0';
+    Contact::nickname = '\0';
+    Contact::number = '\0';
+    Contact::darkest_secret = '\0';
 }
-contact::contact(char info[5][1024])
+Contact::Contact(std::string info[5])
 {
-    strcpy(contact::name,info[0]);
-    std::cout << info[0] << std::endl;
-    strcpy(contact::last_name,info[1]);
-     strcpy(contact::nickname, info[2]);
-    strcpy(contact::number,info[3]);
-    strcpy(contact::darkest_secret, info[4]);
+    name = info[0];
+    last_name = info[1];
+    nickname = info[2];
+    number = info[3];
+    darkest_secret = info[4];
 }
-static void print_simetric_char(size_t size, char *str)
+static void print_simetric_char(size_t size, std::string str)
 {
     size_t i;
+    std::string aux;
+    std::string l;
     
+ 
     if(size > 10)
     {
-        for( i = 0; i <= 9; i++)
-            std::cout << str[i];
-        std::cout << ".";       
-    }
+           l = '.';
+        aux = str;
+        aux.insert(9, l);
+        std::cout << aux; 
+    }      
     else
     {
         size_t space_requiered;
@@ -56,17 +59,26 @@ static void print_simetric_char(size_t size, char *str)
     std::cout << "|";
     
 }
-void contact::display_contact()
+void Contact::display_contact()
 {
     size_t size;
-    size = strlen(contact::name);
-    print_simetric_char(size, contact::name);
-    size = strlen(contact::last_name);
-    print_simetric_char(size, contact::last_name);
-    size = strlen(contact::nickname);
-    print_simetric_char(size, contact::nickname);
-    size = strlen(contact::number);
-    print_simetric_char(size, contact::number);
+    size = name.size();
+    print_simetric_char(size, this->name);
+    size = last_name.size();
+    print_simetric_char(size, this->last_name);
+    size = nickname.size();
+    print_simetric_char(size, this->nickname);
+    size = number.size();
+    print_simetric_char(size, this->number);
     std::cout << std::endl;
  
+}
+void Contact::display_secret_contact()
+{
+    std::cout << "Name: "<< this->name << std::endl;
+     std::cout << "Lastname: "<< this->name << std::endl;
+     std::cout << "Nickname: "<< this->nickname << std::endl;
+     std::cout << "Number: "<< this->number << std::endl;
+     std::cout << "Darkest Secret: " << this->darkest_secret << std::endl;
+    
 }

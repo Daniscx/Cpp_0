@@ -6,7 +6,7 @@
 /*   By: dmaestro <dmaestro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 19:25:17 by dmaestro          #+#    #+#             */
-/*   Updated: 2025/11/19 19:52:35 by dmaestro         ###   ########.fr       */
+/*   Updated: 2026/02/25 20:28:19 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 #include <cctype>
 
 int main(int args, char **shy)
-{
-    int i;
+{ 
     int j;
+    std::string mesage;
 
     if(args == 1)
     { 
@@ -26,16 +26,10 @@ int main(int args, char **shy)
     }
     for (j = 1; shy[j]; j++)
     {
-        for(i = 0; shy[j][i]; i++)
-            shy[j][i] = toupper(shy[j][i]);
-    }
-    
-    for (j = 1; shy[j]; j++)
-    {
-        for(i = 0; shy[j][i]; i++)    
-            std::cout << shy[j][i];
-       if(args > 2 && shy[j + 1])     
-        std::cout  << " ";
+        mesage = shy[j];
+        for (size_t i = 0; i < mesage.size(); i++)
+             mesage[i] =   toupper(mesage[i]);
+        std::cout << mesage;
     }
   
     std::cout  << std::endl;
